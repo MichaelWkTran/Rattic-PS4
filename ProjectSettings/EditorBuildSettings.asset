@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TItleScene.unity
+    guid: 572a232c94ac8364bb847057ce835560
+  - enabled: 1
+    path: Assets/Scenes/World/FamilyRoomScene.unity
+    guid: 5b317a5bc2d84964bb8c721d060fb686
+  - enabled: 1
+    path: Assets/Scenes/World/ArtistRatRoomScene.unity
+    guid: c71b2dc7ae8f4ab469fdc90f2becd0b9
+  - enabled: 1
+    path: Assets/Scenes/Minigames/ButtonMashingGym.unity
+    guid: 0240eef1df280cb4d82d20bc068e5b6e
+  - enabled: 1
+    path: Assets/Scenes/Minigames/ButtonMashingDog.unity
+    guid: 3f14f8dc4d5b72f459e517e0b95bbd74
+  - enabled: 1
+    path: Assets/Scenes/Minigames/ButtonMashingChef.unity
+    guid: e1c7dd1131096324590f68e04702298b
+  - enabled: 1
+    path: Assets/Scenes/World/HubRoomScene.unity
+    guid: 614461eeed8174e478ffd79170c0139e
+  - enabled: 1
+    path: Assets/Scenes/World/CatRoomScene.unity
+    guid: 9f7a74bdbd3e6b649a505550cab04a34
+  - enabled: 1
+    path: Assets/Scenes/World/ChefRatRoomScene.unity
+    guid: 9a9d9b641adc14144acab54fb494bc57
+  - enabled: 1
+    path: Assets/Scenes/World/DevRoomScene.unity
+    guid: 6e49dda9f6fc3fe44955258019616054
+  - enabled: 1
+    path: Assets/Scenes/World/DogRoomScene.unity
+    guid: 500def5fac3fc934c918aebaeba754e8
+  - enabled: 1
+    path: Assets/Scenes/World/EmoRatRoomScene.unity
+    guid: d18b48898e03b5c47a5630a756b5dd38
+  - enabled: 1
+    path: Assets/Scenes/World/FakeRatRoomScene.unity
+    guid: 3c717dc7a26797e49a55bb6a4314dde9
+  - enabled: 1
+    path: Assets/Scenes/World/FashionRatRoomScene.unity
+    guid: 4a29ef6b30a7bee4382a47a1a36575f2
+  - enabled: 1
+    path: Assets/Scenes/World/GymRoomScene.unity
+    guid: 088706f59bd20d84d810035e8ee87c2e
+  - enabled: 1
+    path: Assets/Scenes/World/HumanRoomScene.unity
+    guid: 335c66b7d7b053e4489a036a1c53da47
+  - enabled: 1
+    path: Assets/Scenes/World/LabRatRoomScene.unity
+    guid: 6775ef74d54166c4c8a91bca95e42745
+  - enabled: 1
+    path: Assets/Scenes/World/MysticRatRoomScene.unity
+    guid: 8b754cde1f4c8924793f366ea27aed72
+  - enabled: 1
+    path: Assets/Scenes/World/PirateRatRoom.unity
+    guid: ee2b2ca39b6e2704ebc1b4d1ef3c996f
+  - enabled: 1
+    path: Assets/Scenes/Minigames/CutsceneMystic.unity
+    guid: e938cc4548f402544a7580eef3503782
+  m_configObjects: {}

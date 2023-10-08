@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7639618669608557538}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -166,7 +165,6 @@ RectTransform:
   m_Children:
   - {fileID: 121062373425694305}
   m_Father: {fileID: 7639618669608557538}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -210,6 +208,8 @@ GameObject:
   - component: {fileID: 7639618669608557538}
   - component: {fileID: 7639618669608557564}
   - component: {fileID: 7639618669608557565}
+  - component: {fileID: 839119977357384397}
+  - component: {fileID: 3651378299308327167}
   m_Layer: 5
   m_Name: Screen
   m_TagString: Untagged
@@ -233,7 +233,6 @@ RectTransform:
   - {fileID: 7920989499091859103}
   - {fileID: 5963779198053664095}
   m_Father: {fileID: 7639618669906457250}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -278,6 +277,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &839119977357384397
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7639618669608557539}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &3651378299308327167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7639618669608557539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af28d66e4e9cf3544b9db0e3eb52c487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7639618669906457251
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +332,6 @@ RectTransform:
   m_Children:
   - {fileID: 7639618669608557538}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -366,7 +388,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7639618669608557538}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -475,6 +496,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5963779198053664095}
     m_Modifications:
     - target: {fileID: 1098848034707529743, guid: 107b5ee6db79b684cab8c2073278ff73, type: 3}
@@ -566,6 +588,9 @@ PrefabInstance:
       value: WinScreenItem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 107b5ee6db79b684cab8c2073278ff73, type: 3}
 --- !u!224 &121062373425694305 stripped
 RectTransform:

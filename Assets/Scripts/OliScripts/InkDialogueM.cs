@@ -75,12 +75,12 @@ public class InkDialogueM : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.E) && isTalking)
+        if (Input.GetButtonDown("Interact") && isTalking)
         {
             DisplayFullSentence();
 
         }
-        else if (Input.GetKeyDown(KeyCode.E) && !isTalking)
+        else if (Input.GetButtonDown("Interact") && !isTalking)
         {
             //if (Input.GetButton("Action"))
             if (currentStory.currentChoices.Count == 0)
@@ -91,7 +91,7 @@ public class InkDialogueM : MonoBehaviour
             {
                 if(!hadMini)
                 {
-                    MakeChoice();
+                    //MakeChoice();
                 }
                
             }
@@ -518,12 +518,20 @@ public class InkDialogueM : MonoBehaviour
         return currentChoices.Count-1; //we didnt find any item
     }
 
+
+    IEnumerator SelectChoiceDropdownAfterFrame()
+    {
+        yield return 0; // Wait for a frame update.
+        EventSystem.current.SetSelectedGameObject(choiceDropdown.gameObject);
+        choiceDropdown.OnSelect(null);
+    }
     public void SetActiveTradeUI(bool shouldBeActive)
     {
         choiceDropdown.gameObject.SetActive(shouldBeActive);
         confirmButton.SetActive(shouldBeActive);
         cancelButton.SetActive(shouldBeActive);
         continueButton.SetActive(!shouldBeActive);//set this active when not trading
+        if (shouldBeActive) StartCoroutine(SelectChoiceDropdownAfterFrame());
     }
 
     public void SetActiveUselessChoiceUI(bool shouldBeActive)
@@ -532,6 +540,7 @@ public class InkDialogueM : MonoBehaviour
         confirmButton.SetActive(shouldBeActive);
         cancelButton.SetActive(!shouldBeActive); //cannot cancel a useless choice
         continueButton.SetActive(!shouldBeActive);//set this active when not trading
+        if (shouldBeActive) StartCoroutine(SelectChoiceDropdownAfterFrame());
     }
 
     public void CancelTrade()

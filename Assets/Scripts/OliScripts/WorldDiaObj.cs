@@ -20,7 +20,7 @@ public class WorldDiaObj : MonoBehaviour
             worldText.text = dialogueWorldText;
             empty.SetActive(true);
 
-            //if(Input.GetKeyDown(KeyCode.E))
+            //if(Input.GetButtonDown("Interact"))
             //{
             //
             //}

@@ -30,7 +30,6 @@ RectTransform:
   m_Children:
   - {fileID: 549508917399646599}
   m_Father: {fileID: 549508916560047022}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -49,6 +48,8 @@ GameObject:
   - component: {fileID: 549508915758394097}
   - component: {fileID: 549508915758394096}
   - component: {fileID: 549508915758394098}
+  - component: {fileID: 9155576935729129659}
+  - component: {fileID: 8540619022570659981}
   m_Layer: 5
   m_Name: TaskLog
   m_TagString: Untagged
@@ -72,7 +73,6 @@ RectTransform:
   - {fileID: 549508916788351754}
   - {fileID: 549508916560047022}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -134,6 +134,30 @@ MonoBehaviour:
   isHidden: 0
   hiddenOffset: {x: 0, y: 0}
   lerpFactor: 0
+--- !u!225 &9155576935729129659
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549508915758394094}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &8540619022570659981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549508915758394094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af28d66e4e9cf3544b9db0e3eb52c487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &549508916439575019
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +189,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 549508915758394095}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -302,7 +325,6 @@ RectTransform:
   m_Children:
   - {fileID: 549508915734135686}
   m_Father: {fileID: 549508915758394095}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -390,8 +412,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 549508917399646600}
   m_HandleRect: {fileID: 549508917399646599}
   m_Direction: 3
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999964
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -428,7 +450,6 @@ RectTransform:
   m_Children:
   - {fileID: 549508916898616875}
   m_Father: {fileID: 549508915758394095}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -509,7 +530,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 549508916788351754}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -573,7 +593,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 549508915734135686}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

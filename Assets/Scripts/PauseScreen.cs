@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PauseScreen : MonoBehaviour
 {
-    [SerializeField] KeyCode pauseKey = KeyCode.Escape;
     [SerializeField] int titleSceneIndex;
+    [SerializeField] Button resumeButton;
     GameObject screen;
 
     public bool isPaused { get; private set; } = false;
@@ -17,7 +20,7 @@ public class PauseScreen : MonoBehaviour
     void Update()
     {
         //Pause or Unpause
-        if (Input.GetKeyDown(pauseKey))
+        if (Input.GetButtonDown("Pause"))
         {
             if (isPaused) Unpause(); else Pause();
         }
@@ -27,9 +30,17 @@ public class PauseScreen : MonoBehaviour
     {
         if (isPaused) return;
 
+        IEnumerator SelectButtonAfterFrame()
+        {
+            yield return 0; // Wait for a frame update.
+            EventSystem.current.SetSelectedGameObject(resumeButton.gameObject);
+            resumeButton.OnSelect(null);
+        }
+
         screen.SetActive(true);
         isPaused = true;
         Time.timeScale = 0f;
+        StartCoroutine(SelectButtonAfterFrame());
     }
 
     public void Unpause()

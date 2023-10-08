@@ -124,7 +124,7 @@ public class Inventory : MonoBehaviour
                     FindObjectOfType<WinScreen>().Win();
                 }
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetButtonDown("Interact"))
                 {
                     if (!hasDisplayedWinImage)
                     {

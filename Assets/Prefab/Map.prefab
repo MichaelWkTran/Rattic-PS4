@@ -32,7 +32,6 @@ RectTransform:
   m_Children:
   - {fileID: 755783616554529070}
   m_Father: {fileID: 6353404220790093742}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -108,7 +107,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 652203566232500568}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -184,7 +182,6 @@ RectTransform:
   m_Children:
   - {fileID: 652203566232500568}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -203,4 +200,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52246af7cc80f2b4c9a6331a70dddcf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openMapKey: 109

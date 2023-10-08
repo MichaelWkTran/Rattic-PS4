@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    [SerializeField] KeyCode openMapKey = KeyCode.M;
     GameObject screen;
 
     void Start()
@@ -23,7 +22,7 @@ public class Map : MonoBehaviour
         }
 
         //Open Close Inventory
-        if (Input.GetKeyDown(openMapKey)) OpenClose();
+        if (Input.GetButtonDown("Map")) OpenClose();
     }
 
     public void OpenClose()

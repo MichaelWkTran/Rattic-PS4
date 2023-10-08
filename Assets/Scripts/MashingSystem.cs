@@ -19,8 +19,8 @@ public class MashingSystem : MonoBehaviour
 
     void Update()
     {
-        bool holdButtonInput = Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0);
-        bool pressButtonInput = Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
+        bool holdButtonInput = Input.GetButton("Interact") || Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0);
+        bool pressButtonInput = Input.GetButtonDown("Interact") || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
 
         //Add Mesh Score
         if (pressButtonInput && canMash) { mashed.Invoke(); }

@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class InventoryBag : MonoBehaviour
 {
-    [SerializeField] KeyCode openInventoryKey = KeyCode.I;
     [SerializeField] Transform bag;
     [SerializeField] float itemSpriteScale = 1.5f;
     GameObject screen;
@@ -26,7 +25,7 @@ public class InventoryBag : MonoBehaviour
         }
 
         //Open Close Inventory
-        if (Input.GetKeyDown(openInventoryKey)) OpenClose();
+        if (Input.GetButtonDown("Inventory")) OpenClose();
     }
 
     public void OpenClose()

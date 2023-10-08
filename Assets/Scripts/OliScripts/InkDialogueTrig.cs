@@ -14,7 +14,7 @@ public class InkDialogueTrig : MonoBehaviour
     public float diaReset = 0.1f;
     GameObject textWorld;
     public GameObject E; // E prompt
-    public void Awake()
+    public void Start()
     {
         textWorld = GetComponentInChildren<TMP_Text>().gameObject;
         if(GetComponent<NPC>().isNPC) { SetRandomDialog(); };
@@ -78,7 +78,7 @@ public class InkDialogueTrig : MonoBehaviour
                 {
                     E.SetActive(false);
                 }
-                if (Input.GetKeyDown(KeyCode.E) && !GetComponent<NPC>().isNPC && canTalk)
+                if (Input.GetButtonDown("Interact") && !GetComponent<NPC>().isNPC && canTalk)
                 {
                     textWorld.SetActive(false);
                     InkDialogueM.talkingToThisNPC = gameObject;

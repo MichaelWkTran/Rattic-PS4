@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
         if (!playerScript.isTalking && canMove)
         {
-            float moveSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+            float moveSpeed = Input.GetButton("Dash") ? sprintSpeed : walkSpeed;
 
             //Move
             rigidbody.velocity = moveSpeed * new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));

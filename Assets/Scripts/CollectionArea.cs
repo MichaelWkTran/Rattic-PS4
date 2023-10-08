@@ -12,7 +12,7 @@ public class CollectionArea : MonoBehaviour
     void Start()
     {
         playerInventory = GetComponentInParent<Inventory>();
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Interact"))
         {
             pickingUp = true;
 

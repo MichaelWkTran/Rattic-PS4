@@ -30,7 +30,7 @@ public class PlayerInteractionArea : MonoBehaviour
     {
 
         //are we picking up an object?
-        if(OBJColliding && Input.GetKeyDown(KeyCode.E))
+        if(OBJColliding && Input.GetButtonDown("Interact"))
         {
             playerInventory.itemInventory.Add(OBJColliding.GetComponent<WorldItem>().item);
             FindObjectOfType<InventoryBag>().UpdateUI();
@@ -41,7 +41,7 @@ public class PlayerInteractionArea : MonoBehaviour
             Destroy(newSpeakingSound, 0.5f);
             Destroy(OBJColliding.gameObject);
         }
-        if (NPCColliding && !(Input.GetKeyDown(KeyCode.E)))
+        if (NPCColliding && !(Input.GetButtonDown("Interact")))
         {
             if (!NPCColliding.inConversation)
             {
@@ -65,7 +65,7 @@ public class PlayerInteractionArea : MonoBehaviour
                 }
             }
         }
-        if (NPCColliding && Input.GetKeyDown(KeyCode.E))
+        if (NPCColliding && Input.GetButtonDown("Interact"))
         {
             if (!NPCColliding.inConversation)
             {

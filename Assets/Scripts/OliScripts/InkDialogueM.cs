@@ -370,6 +370,7 @@ public class InkDialogueM : MonoBehaviour
             newSpeakingSound.GetComponent<AudioSource>().volume = 0;
         }
         newSpeakingSound.GetComponent<AudioSource>().Play();
+        newSpeakingSound.GetComponent<AudioSource>().PlayOnGamepad(0);
         if (isShouting)
         {
             GameObject doubleSpeech = Instantiate(newSpeakingSound);

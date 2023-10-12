@@ -1,4 +1,7 @@
 using UnityEngine;
+#if UNITY_PS4
+using UnityEngine.PS4;
+#endif
 
 public class MouseTrap : MonoBehaviour
 {
@@ -25,9 +28,15 @@ public class MouseTrap : MonoBehaviour
             GameObject hitSound = Instantiate(soundPrefab);
             hitSound.GetComponent<AudioSource>().clip = impactWithPlayerSound;
             hitSound.GetComponent<AudioSource>().Play();
+            hitSound.GetComponent<AudioSource>().PlayOnGamepad(0);
             hitSound.GetComponent<AudioSource>().volume = GameSettings.sfxVolume;
             Destroy(hitSound, 4.0f);
         }
+
+        #if UNITY_PS4
+        //Trigger Vibration
+        if (PS4Input.PadIsConnected(0)) PS4Input.PadSetVibration(0, 255, 255);
+        #endif
 
         //Warp player to checkpoint
         Checkpoint.SpawnAtCheckpoint();

@@ -215,6 +215,7 @@ public class DialogueManager : MonoBehaviour
         newSpeakingSound.GetComponent<AudioSource>().clip = speakingSound;
         newSpeakingSound.GetComponent<AudioSource>().pitch += Random.Range(-pitchVariation, pitchVariation); //randomly adjust pitch
         newSpeakingSound.GetComponent<AudioSource>().Play();
+        newSpeakingSound.GetComponent<AudioSource>().PlayOnGamepad(0);
         //set volume here
         Destroy(newSpeakingSound, 0.2f);
     }
@@ -224,6 +225,7 @@ public class DialogueManager : MonoBehaviour
         GameObject newSpeakingSound = Instantiate(speechSoundPrefab);
         newSpeakingSound.GetComponent<AudioSource>().clip = specialSpeechList[specialSpeechIdx];
         newSpeakingSound.GetComponent<AudioSource>().Play();
+        newSpeakingSound.GetComponent<AudioSource>().PlayOnGamepad(0);
         //set volume here
         Destroy(newSpeakingSound, 10f);
     }

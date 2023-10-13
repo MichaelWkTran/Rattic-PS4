@@ -20,6 +20,7 @@ public class MysticCutscene : MonoBehaviour
     
         //Change Gamepad Light Colour
          PS4Input.PadSetLightBar(0, (int)(newColor.r * 255), (int)(newColor.g * 255), (int)(newColor.b * 255));
+         PS4Input.PadResetLightBar(0);
     }
 
 #endif

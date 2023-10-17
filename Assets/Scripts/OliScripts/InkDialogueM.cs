@@ -40,8 +40,8 @@ public class InkDialogueM : MonoBehaviour
     public static bool diaActive;
     private bool isTalking;
     public bool hadMini = false;
-    public float diaReset = 0.001f;
-    private bool disableTrade = false;
+    public float diaReset = 0.001f; 
+
     private void Awake()
     {
         if (instance != null)
@@ -248,12 +248,6 @@ public class InkDialogueM : MonoBehaviour
         {
             ExitDiaMode();
         }
-
-      if (disableTrade)
-        {
-			SetActiveTradeUI (false);
-			Continue ();
-	    	}
     }
 
     IEnumerator TypingSentence(string sentence)
@@ -552,8 +546,8 @@ public class InkDialogueM : MonoBehaviour
 
     public void CancelTrade()
     {
-
-    disableTrade = true;
+        SetActiveTradeUI(false);
+        Continue();
     }
 
 }

@@ -10,7 +10,7 @@ public class MashingSystem : MonoBehaviour
     public bool canMash = true;
 #if UNITY_PS4
     [SerializeField] Vector3 lastGyro;
-    [SerializeField] float minShakeDistance;
+    float minShakeDistance = 2;
 #endif
     public UnityEvent mashed;
 

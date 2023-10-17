@@ -567,7 +567,7 @@ PlayerSettings:
   ps4IconImagesFolder: 
   ps4SaveDataImagePath: 
   ps4SdkOverride: 
-  ps4BGMPath: 
+  ps4BGMPath: Assets/Audio/snd0.at9
   ps4ShareFilePath: 
   ps4ShareOverlayImagePath: 
   ps4PrivacyGuardImagePath: 

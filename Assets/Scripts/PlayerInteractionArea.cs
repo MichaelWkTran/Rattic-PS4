@@ -37,7 +37,10 @@ public class PlayerInteractionArea : MonoBehaviour
             GameObject newSpeakingSound = Instantiate(speechSoundPrefab);
             newSpeakingSound.GetComponent<AudioSource>().clip = speakingSound;
             newSpeakingSound.GetComponent<AudioSource>().Play();
+
+#if UNITY_PS4
             newSpeakingSound.GetComponent<AudioSource>().PlayOnGamepad(0);
+#endif
             newSpeakingSound.GetComponent<AudioSource>().volume = GameSettings.sfxVolume;
             Destroy(newSpeakingSound, 0.5f);
             Destroy(OBJColliding.gameObject);

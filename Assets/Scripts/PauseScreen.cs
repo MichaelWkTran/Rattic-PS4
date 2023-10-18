@@ -9,7 +9,8 @@ public class PauseScreen : MonoBehaviour
     [SerializeField] Button resumeButton;
     GameObject screen;
 
-    public bool isPaused { get; private set; } = false;
+    public static bool isPaused { get; private set; } = false;
+    public static bool canPause = true;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class PauseScreen : MonoBehaviour
     void Update()
     {
         //Pause or Unpause
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause") && canPause)
         {
             if (isPaused) Unpause(); else Pause();
         }

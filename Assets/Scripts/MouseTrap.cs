@@ -28,7 +28,10 @@ public class MouseTrap : MonoBehaviour
             GameObject hitSound = Instantiate(soundPrefab);
             hitSound.GetComponent<AudioSource>().clip = impactWithPlayerSound;
             hitSound.GetComponent<AudioSource>().Play();
+#if UNITY_PS4
             hitSound.GetComponent<AudioSource>().PlayOnGamepad(0);
+            
+#endif
             hitSound.GetComponent<AudioSource>().volume = GameSettings.sfxVolume;
             Destroy(hitSound, 4.0f);
         }

@@ -11,14 +11,24 @@ public class InkDialogueTrig : MonoBehaviour
     public string stateName = "";
     public bool countDown = false;
     public bool canTalk = true;
+    InventoryBag bag;
+    Map map;
     public float diaReset = 0.1f;
     GameObject textWorld;
     public GameObject E; // E prompt
+    
+    public bool AnythingOpen()
+    {
+        return (map.isOpen || bag.isOpen);
+    }
+
     public void Start()
     {
         textWorld = GetComponentInChildren<TMP_Text>().gameObject;
         if(GetComponent<NPC>().isNPC) { SetRandomDialog(); };
         GetComponentInChildren<TMP_Text>().text = GetComponent<NPC>().TextWorld;
+        map = FindObjectOfType<Map>();
+        bag = FindObjectOfType<InventoryBag>();
         textWorld.SetActive(false);
         activeDialogueInstance = InkDialogueM.GetInstance();
     }
@@ -78,7 +88,7 @@ public class InkDialogueTrig : MonoBehaviour
                 {
                     E.SetActive(false);
                 }
-                if (Input.GetButtonDown("Interact") && !GetComponent<NPC>().isNPC && canTalk)
+                if (Input.GetButtonDown("Interact") && !GetComponent<NPC>().isNPC && canTalk && !AnythingOpen() && !PauseScreen.isPaused)
                 {
                     textWorld.SetActive(false);
                     InkDialogueM.talkingToThisNPC = gameObject;

@@ -42,6 +42,7 @@ public class InkDialogueM : MonoBehaviour
     public bool hadMini = false;
     public float diaReset = 0.001f;
     private bool disableTrade = false;
+    private bool isCancellable = true;
 
     private void Awake()
     {
@@ -110,6 +111,9 @@ public class InkDialogueM : MonoBehaviour
         else if(!hadMini)
         {
 
+        }
+        if (((Input.GetButtonDown("Map") || Input.GetButtonDown("Inventory")) && isCancellable)){
+            CancelTrade();
         }
     }
 
@@ -246,16 +250,16 @@ public class InkDialogueM : MonoBehaviour
     void LateUpdate()
     {
       if(hadMini)
-        {
-            ExitDiaMode();
-        }
-
-      if (disableTrade)
       {
+            ExitDiaMode();
+      }
+
+       if (disableTrade)
+       {
           SetActiveTradeUI(false);
           Continue();
           disableTrade = false;
-      }
+       }
     }
 
     IEnumerator TypingSentence(string sentence)
@@ -378,7 +382,9 @@ public class InkDialogueM : MonoBehaviour
             newSpeakingSound.GetComponent<AudioSource>().volume = 0;
         }
         newSpeakingSound.GetComponent<AudioSource>().Play();
+#if UNITY_PS4
         newSpeakingSound.GetComponent<AudioSource>().PlayOnGamepad(0);
+#endif
         if (isShouting)
         {
             GameObject doubleSpeech = Instantiate(newSpeakingSound);
@@ -439,11 +445,13 @@ public class InkDialogueM : MonoBehaviour
         if (currentChoices.Count > 0) //do we have a choice?
         {
             SetActiveTradeUI(true);
+            isCancellable = true;
             if (currentChoices[0].text[0] == '!') //tries to find state intro
             {
                 if (talkingToThisNPC.GetComponent<InkDialogueTrig>().stateName == "") //no state
                 {
                     SetActiveTradeUI(false);
+                    isCancellable = false;
                     talkingToThisNPC.GetComponent<InkDialogueTrig>().stateName = currentChoices[0].text.Replace("\n", ""); //should be set to state intro    
                 }
 
@@ -457,6 +465,7 @@ public class InkDialogueM : MonoBehaviour
         else
         {
             SetActiveTradeUI(false);
+            isCancellable = false;
             return;
         }
 
@@ -512,6 +521,7 @@ public class InkDialogueM : MonoBehaviour
         //progress dialogue
         currentStory.ChooseChoiceIndex(FindObjectIndex(choiceDropdown.options[choiceDropdown.value].text, currentStory.currentChoices));
         SetActiveTradeUI(false);
+        isCancellable = false;
         Continue();
     }
 
@@ -555,6 +565,7 @@ public class InkDialogueM : MonoBehaviour
     public void CancelTrade()
     {
         disableTrade = true;
+        isCancellable = false;
     }
 
 }

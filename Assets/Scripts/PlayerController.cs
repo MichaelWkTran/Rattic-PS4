@@ -57,6 +57,13 @@ public class PlayerController : MonoBehaviour
             rigidbody.velocity = Vector2.zero;
             animator.SetFloat("Speed", 0);
         }
-      
+        if (!canMove)
+        {
+            PauseScreen.canPause = false;
+        }
+        else
+        {
+            PauseScreen.canPause = true;
+        }
     }
 }

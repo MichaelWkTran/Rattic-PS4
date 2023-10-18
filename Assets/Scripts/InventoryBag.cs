@@ -6,6 +6,7 @@ public class InventoryBag : MonoBehaviour
     [SerializeField] Transform bag;
     [SerializeField] float itemSpriteScale = 1.5f;
     GameObject screen;
+    public bool isOpen => screen.activeSelf;
     
 
     void Start()
@@ -18,7 +19,7 @@ public class InventoryBag : MonoBehaviour
     void Update()
     {
         //Can not interact with inventory if paused
-        if (FindObjectOfType<PauseScreen>().isPaused)
+        if (PauseScreen.isPaused)
         {
             if (screen.activeSelf) screen.SetActive(false);
             return;
@@ -30,7 +31,7 @@ public class InventoryBag : MonoBehaviour
 
     public void OpenClose()
     {
-        if (FindObjectOfType<PauseScreen>().isPaused) return;
+        if (PauseScreen.isPaused) return;
 
         screen.SetActive(!screen.activeSelf);
         Time.timeScale = screen.activeSelf ? 0.0f : 1.0f;
@@ -38,7 +39,7 @@ public class InventoryBag : MonoBehaviour
 
     public void Open()
     {
-        if (FindObjectOfType<PauseScreen>().isPaused) return;
+        if (PauseScreen.isPaused) return;
 
         screen.SetActive(true);
         Time.timeScale = 0.0f;
@@ -46,7 +47,7 @@ public class InventoryBag : MonoBehaviour
 
     public void Close()
     {
-        if (FindObjectOfType<PauseScreen>().isPaused) return;
+        if (PauseScreen.isPaused) return;
 
             screen.SetActive(false);
         Time.timeScale = 1.0f;

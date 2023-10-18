@@ -5,7 +5,7 @@ using UnityEngine;
 public class Map : MonoBehaviour
 {
     GameObject screen;
-
+    public bool isOpen => screen.activeSelf;
     void Start()
     {
         screen = transform.GetChild(0).gameObject;
@@ -15,7 +15,7 @@ public class Map : MonoBehaviour
     void Update()
     {
         //Can not interact with inventory if paused
-        if (FindObjectOfType<PauseScreen>().isPaused)
+        if (PauseScreen.isPaused)
         {
             if (screen.activeSelf) screen.SetActive(false);
             return;
@@ -27,24 +27,23 @@ public class Map : MonoBehaviour
 
     public void OpenClose()
     {
-        if (FindObjectOfType<PauseScreen>().isPaused) return;
-
+        if (PauseScreen.isPaused) return;
         screen.SetActive(!screen.activeSelf);
         Time.timeScale = screen.activeSelf ? 0.0f : 1.0f;
     }
 
     public void Open()
     {
-        if (FindObjectOfType<PauseScreen>().isPaused) return;
-
+        if (PauseScreen.isPaused) return;
+        PauseScreen.canPause = false;
         screen.SetActive(true);
         Time.timeScale = 0.0f;
     }
 
     public void Close()
     {
-        if (FindObjectOfType<PauseScreen>().isPaused) return;
-
+        if (PauseScreen.isPaused) return;
+        PauseScreen.canPause = true;
         screen.SetActive(false);
         Time.timeScale = 1.0f;
     }
